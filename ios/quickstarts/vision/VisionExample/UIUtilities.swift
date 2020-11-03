@@ -102,12 +102,16 @@ public class UIUtilities {
     }
     switch deviceOrientation {
     case .portrait:
+        print(".portrait")
       return devicePosition == .front ? .leftMirrored : .right
     case .landscapeLeft:
+        print(".landscapeLeft")
       return devicePosition == .front ? .downMirrored : .up
     case .portraitUpsideDown:
+        print(".portraitUpsideDown")
       return devicePosition == .front ? .rightMirrored : .left
     case .landscapeRight:
+        print(".landscapeRight")
       return devicePosition == .front ? .upMirrored : .down
     case .faceDown, .faceUp, .unknown:
       return .up

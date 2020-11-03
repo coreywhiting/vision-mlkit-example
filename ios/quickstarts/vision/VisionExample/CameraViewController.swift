@@ -36,7 +36,8 @@ class CameraViewController: UIViewController {
     .poseAccurate,
   ]
 
-  private var currentDetector: Detector = .onDeviceFace
+    @IBOutlet weak var orientationLabel: UILabel!
+    private var currentDetector: Detector = .onDeviceFace
   private var isUsingFrontCamera = true
   private var previewLayer: AVCaptureVideoPreviewLayer!
   private lazy var captureSession = AVCaptureSession()
@@ -753,6 +754,9 @@ extension CameraViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
     )
 
     visionImage.orientation = orientation
+    
+    
+    
     let imageWidth = CGFloat(CVPixelBufferGetWidth(imageBuffer))
     let imageHeight = CGFloat(CVPixelBufferGetHeight(imageBuffer))
     var shouldEnableClassification = false
